@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "jzSXn6DVj6SDH+6ZbAIotGJtxzOdbCM6jYjakzzxJ2s=",
+  "Source": "GeoMaster.API",
+  "BasePath": "_content/GeoMaster.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

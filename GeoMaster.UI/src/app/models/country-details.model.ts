@@ -1,0 +1,42 @@
+import { Currency } from "./currency.model";
+
+export interface CountryDetails {
+    gdp: string;
+    sexRatio: string;
+    surfaceArea: string;
+    lifeExpectancyMale: string;
+    unemployment: string;
+    currency: Currency;
+    imports: string;
+    homicideRate: string;
+    iso2: string;
+    gdpGrowth: string;
+    employmentServices: string;
+    urbanPopulationGrowth: string;
+    secondarySchoolEnrollmentFemale: string;
+    employmentAgriculture: string;
+    capital: string;
+    co2Emissions: string;
+    forestedArea: string;
+    tourists: string;
+    exports: string;
+    lifeExpectancyFemale: string;
+    postSecondaryEnrollmentFemale: string;
+    postSecondaryEnrollmentMale: string;
+    primarySchoolEnrollmentFemale: string;
+    infantMortality: string;
+    secondarySchoolEnrollmentMale: string;
+    threatenedSpecies: string;
+    population: string;
+    urbanPopulation: string;
+    employmentIndustry: string;
+    name: string;
+    popGrowth: string;
+    region: string;
+    popDensity: string;
+    internetUsers: string;
+    gdpPerCapita: string;
+    fertility: string;
+    refugees: string;
+    primarySchoolEnrollmentMale: string;
+}

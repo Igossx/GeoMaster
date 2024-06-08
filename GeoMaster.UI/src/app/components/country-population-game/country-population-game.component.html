@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="game-container text-center" *ngIf="!gameStarted && !gameOver">
+        <h1 class="mb-4">Wybierz kraj z większą liczbą ludności</h1>
+        <button class="btn btn-primary btn-lg" (click)="startGame()">Start</button>
+    </div>
+
+    <div class="game-container" *ngIf="gameStarted && !gameOver">
+        <h1 class="mb-4">Wybierz kraj z większą liczbą ludności</h1>
+        <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+        <div class="row justify-content-center" *ngIf="country1 && country2">
+            <div class="col-md-5">
+                <div class="card mb-4 text-center" (click)="selectCountry(country1)" [class.selected]="isBlocked"
+                    [ngClass]="{
+                        'bg-success': choiceMade && selectedCountry === country1 && correctChoice,
+                        'bg-danger': choiceMade && selectedCountry === country1 && !correctChoice,
+                        'selected-card': selectedCountry === country1
+                    }">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <img class="mb-4" [src]="'https://flagcdn.com/w160/' + country1.iso2.toLowerCase() + '.png'"
+                            alt="{{ country1.name }} flag">
+                        <h5 class="card-title">{{ country1.name }}</h5>
+                        <p *ngIf="showPopulation" class="card-text">{{ country1.population * 1000 | number }} osób</p>
+                        <p *ngIf="!showPopulation" class="card-text">Kliknij, aby wybrać</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex align-items-center justify-content-center">
+                <h2 class="vs">VS</h2>
+            </div>
+            <div class="col-md-5">
+                <div class="card mb-4 text-center" (click)="selectCountry(country2)" [class.selected]="isBlocked"
+                    [ngClass]="{
+                        'bg-success': choiceMade && selectedCountry === country2 && correctChoice,
+                        'bg-danger': choiceMade && selectedCountry === country2 && !correctChoice,
+                        'selected-card': selectedCountry === country2
+                    }">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <img class="mb-4" [src]="'https://flagcdn.com/w160/' + country2.iso2.toLowerCase() + '.png'"
+                            alt="{{ country2.name }} flag">
+                        <h5 class="card-title">{{ country2.name }}</h5>
+                        <p *ngIf="showPopulation" class="card-text">{{ country2.population * 1000 | number }} osób</p>
+                        <p *ngIf="!showPopulation" class="card-text">Kliknij, aby wybrać</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 row justify-content-center">
+            <div class="col-md-4 text-center">
+                <h4 class="game-info">Wynik: {{ score }}</h4>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <h4 class="game-info">Czas gry: {{ timeElapsed }} sekund</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-over text-center" *ngIf="gameOver">
+        <h1 class="mb-4">Koniec gry!</h1>
+        <p class="score-display">Twój wynik: {{ score }}</p>
+        <p class="time-display">z czasem: {{ timeElapsed }} sekund</p>
+        <button class="btn btn-primary btn-lg" (click)="startGame()">Zagraj ponownie</button>
+    </div>
+</div>

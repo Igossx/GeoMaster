@@ -1,0 +1,80 @@
+<div class="wrapper">
+  <aside id="sidebar">
+    <div class="d-flex">
+      <button class="toggle-btn" type="button">
+        <i class="lni lni-grid-alt"></i>
+      </button>
+      <div class="sidebar-logo">
+        <a href="#">GeoMaster</a>
+      </div>
+    </div>
+    <ul class="sidebar-nav">
+      <li class="sidebar-item">
+        <a routerLink="/" class="sidebar-link">
+          <i class="lni lni-home"></i>
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a [routerLink]="['country']" class="sidebar-link">
+          <i class="lni lni-pyramids"></i>
+          <span>Country info</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a [routerLink]="['city']" class="sidebar-link">
+          <i class="lni lni-trees"></i>
+          <span>City info</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link" data-bs-toggle="collapse" (click)="toggleDropdown($event, 'multi')">
+          <i class="lni lni-game"></i>
+          <span>Games</span>
+        </a>
+        <ul id="multi" class="sidebar-dropdown list-unstyled collapse">
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link" data-bs-toggle="collapse" (click)="toggleDropdown($event, 'multi-two')">
+              Country games
+            </a>
+            <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+              <li class="sidebar-item">
+                <a [routerLink]="['country-population-game']" class="sidebar-link">By Country Population</a>
+              </li>
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">By Country Surface Area</a>
+              </li>
+            </ul>
+          </li>
+          <li class="sidebar-item">
+            <a href="#" class="sidebar-link" data-bs-toggle="collapse" (click)="toggleDropdown($event, 'auth')">
+              City games
+            </a>
+            <ul id="auth" class="sidebar-dropdown list-unstyled collapse">
+              <li class="sidebar-item">
+                <a href="#" class="sidebar-link">By City Population</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-library"></i>
+          <span>Best scores</span>
+        </a>
+      </li>
+      <li class="sidebar-item">
+        <a href="#" class="sidebar-link">
+          <i class="lni lni-support"></i>
+          <span>About Us</span>
+        </a>
+      </li>
+    </ul>
+  </aside>
+  <div class="main p-3">
+    <div class="text-center">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,333 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\country\\countrydetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\country\\countrydetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\country\\countrypopulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\country\\countrypopulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\country\\countrysurfacearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\country\\countrysurfacearea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\currency\\currencydetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\currency\\currencydetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\repositories\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:repositories\\countryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:controllers\\countrycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:controllers\\citycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\repositories\\cityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:repositories\\cityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\country\\twocountrieswithsurfacearearesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\country\\twocountrieswithsurfacearearesult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\country\\twocountrieswithpopulationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\country\\twocountrieswithpopulationresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\country\\countrynames.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\country\\countrynames.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\interfaces\\icityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:interfaces\\icityrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\interfaces\\icountryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:interfaces\\icountryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\city\\citypopulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\city\\citypopulation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\city\\citydetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\city\\citydetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|c:\\users\\igoss\\source\\repos\\projects angular\\geomaster\\geomaster.api\\models\\city\\citynames.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9BBDA9E5-CC0A-4E27-8D3C-F06EC1F270E5}|GeoMaster.API.csproj|solutionrelative:models\\city\\citynames.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CurrencyDetails.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Currency\\CurrencyDetails.cs",
+              "RelativeDocumentMoniker": "Models\\Currency\\CurrencyDetails.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Currency\\CurrencyDetails.cs",
+              "RelativeToolTip": "Models\\Currency\\CurrencyDetails.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-08T22:23:43.871Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CountryDetails.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\CountryDetails.cs",
+              "RelativeDocumentMoniker": "Models\\Country\\CountryDetails.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\CountryDetails.cs",
+              "RelativeToolTip": "Models\\Country\\CountryDetails.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T17:17:23.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CountrySurfaceArea.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\CountrySurfaceArea.cs",
+              "RelativeDocumentMoniker": "Models\\Country\\CountrySurfaceArea.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\CountrySurfaceArea.cs",
+              "RelativeToolTip": "Models\\Country\\CountrySurfaceArea.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA7AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T17:26:41.897Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CountryPopulation.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\CountryPopulation.cs",
+              "RelativeDocumentMoniker": "Models\\Country\\CountryPopulation.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\CountryPopulation.cs",
+              "RelativeToolTip": "Models\\Country\\CountryPopulation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T17:26:02.334Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Repositories\\CityRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\CityRepository.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Repositories\\CityRepository.cs",
+              "RelativeToolTip": "Repositories\\CityRepository.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAcAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T14:16:40.941Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CountryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Repositories\\CountryRepository.cs",
+              "RelativeDocumentMoniker": "Repositories\\CountryRepository.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Repositories\\CountryRepository.cs",
+              "RelativeToolTip": "Repositories\\CountryRepository.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAA2wC8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T17:30:06.65Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CityController.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Controllers\\CityController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CityController.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Controllers\\CityController.cs",
+              "RelativeToolTip": "Controllers\\CityController.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABsAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T14:25:03.731Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CountryController.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Controllers\\CountryController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CountryController.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Controllers\\CountryController.cs",
+              "RelativeToolTip": "Controllers\\CountryController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T17:39:02.288Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Extensions\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "Extensions\\ServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Extensions\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "Extensions\\ServiceCollectionExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T18:01:17.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T18:02:35.094Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-02T13:27:27.161Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TwoCountriesWithSurfaceAreaResult.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\TwoCountriesWithSurfaceAreaResult.cs",
+              "RelativeDocumentMoniker": "Models\\Country\\TwoCountriesWithSurfaceAreaResult.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\TwoCountriesWithSurfaceAreaResult.cs",
+              "RelativeToolTip": "Models\\Country\\TwoCountriesWithSurfaceAreaResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T17:44:39.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "TwoCountriesWithPopulationResult.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\TwoCountriesWithPopulationResult.cs",
+              "RelativeDocumentMoniker": "Models\\Country\\TwoCountriesWithPopulationResult.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\TwoCountriesWithPopulationResult.cs",
+              "RelativeToolTip": "Models\\Country\\TwoCountriesWithPopulationResult.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAABDAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-04T17:41:43.2Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "countryNames.json",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\countryNames.json",
+              "RelativeDocumentMoniker": "Models\\Country\\countryNames.json",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\Country\\countryNames.json",
+              "RelativeToolTip": "Models\\Country\\countryNames.json",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAJoAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-02T13:15:48.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ICityRepository.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Interfaces\\ICityRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ICityRepository.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Interfaces\\ICityRepository.cs",
+              "RelativeToolTip": "Interfaces\\ICityRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T14:15:41.29Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ICountryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Interfaces\\ICountryRepository.cs",
+              "RelativeDocumentMoniker": "Interfaces\\ICountryRepository.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Interfaces\\ICountryRepository.cs",
+              "RelativeToolTip": "Interfaces\\ICountryRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T17:44:34.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "CityDetails.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\City\\CityDetails.cs",
+              "RelativeDocumentMoniker": "Models\\City\\CityDetails.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\City\\CityDetails.cs",
+              "RelativeToolTip": "Models\\City\\CityDetails.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvw0AAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T14:11:18.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CityPopulation.cs",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\City\\CityPopulation.cs",
+              "RelativeDocumentMoniker": "Models\\City\\CityPopulation.cs",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\City\\CityPopulation.cs",
+              "RelativeToolTip": "Models\\City\\CityPopulation.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-02T14:11:38.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "cityNames.json",
+              "DocumentMoniker": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\City\\cityNames.json",
+              "RelativeDocumentMoniker": "Models\\City\\cityNames.json",
+              "ToolTip": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\Models\\City\\cityNames.json",
+              "RelativeToolTip": "Models\\City\\cityNames.json",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAEAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-06-02T15:09:41.016Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
