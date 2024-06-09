@@ -1,0 +1,24 @@
+# .gitignore dla ASP.NET Core i Angular
+
+# Ignoruj pliki i foldery specyficzne dla Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignoruj foldery bin i obj
+[Bb]in/
+[Oo]bj/
+
+# Ignoruj pliki zależności
+node_modules/
+packages/
+wwwroot/lib/
+
+# Ignoruj pliki konfiguracji
+appsettings*.json
+.env
+
+# Ignoruj pliki logów
+*.log
