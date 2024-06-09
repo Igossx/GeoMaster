@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj": {}
+    "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj": {
+    "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj",
+        "projectUniqueName": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj",
         "projectName": "GeoMaster.API",
-        "projectPath": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj",
+        "projectPath": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj",
         "packagesPath": "C:\\Users\\igoss\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\obj\\",
+        "outputPath": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster\\GeoMaster.API\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\igoss\\AppData\\Roaming\\NuGet\\NuGet.Config",

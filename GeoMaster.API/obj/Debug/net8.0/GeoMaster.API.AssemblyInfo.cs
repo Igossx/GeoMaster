@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GeoMaster.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+99b7da0a25b315b27e97ab435d623467a66e9ab0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b80ba9dde7426f8c75692a15aede9da873e72b67")]
 [assembly: System.Reflection.AssemblyProductAttribute("GeoMaster.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GeoMaster.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

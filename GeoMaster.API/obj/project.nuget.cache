@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W6WMtGtqL6mvEAw0IiRIvDzZEleHw7e/m8DMP1Iivfvgn7PsV9YMThmYppvQxV7dBhTduQ7OGP8EHeHYdva0yQ==",
+  "dgSpecHash": "JvkDR8asK3iSLnb04sx3QASO0rZApe5xhxn8oWaIYJfXX0zl5SM3X71RD9oAQ79ygIIfwiafDfaTrBIKqAHOvQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj",
+  "projectFilePath": "C:\\Users\\igoss\\source\\repos\\Projects Angular\\GeoMaster\\GeoMaster\\GeoMaster.API\\GeoMaster.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\igoss\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\igoss\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
