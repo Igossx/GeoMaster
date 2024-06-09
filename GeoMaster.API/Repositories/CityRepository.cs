@@ -68,14 +68,14 @@ namespace GeoMaster.API.Repositories
 
             var countryDataArray = JArray.Parse(content);
 
-            if (countryDataArray.Count == 0)
-            {
-                return new CityPopulation
-                {
-                    Name = randomCityName,
-                    Population = "Błąd" // Możesz ustawić dowolną populację lub pozostawić ją pustą
-                };
-            }
+            //if (countryDataArray.Count == 0)
+            //{
+            //    return new CityPopulation
+            //    {
+            //        Name = randomCityName,
+            //        Population = "Błąd" // Możesz ustawić dowolną populację lub pozostawić ją pustą
+            //    };
+            //}
 
             var cityData = JArray.Parse(content)[0].ToObject<CityPopulation>();
 
