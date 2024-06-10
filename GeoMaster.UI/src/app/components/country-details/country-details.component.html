@@ -1,49 +1,78 @@
 <div class="container">
-  <h1>Wyszukaj kraj</h1>
-  <form (ngSubmit)="onSubmit()">
-    <div class="form-group mb-4">
-      <label for="countryName">Nazwa państwa</label>
-      <input type="text" id="countryName" class="form-control" [(ngModel)]="countryName" name="countryName" required />
+  <div *ngIf="showSearchForm" class="card mb-4">
+    <div class="card-body">
+      <form (ngSubmit)="onSubmit()">
+        <h1>Wyszukaj kraj</h1>
+        <div class="form-group d-flex flex-column align-items-center">
+          <label for="countryName" class="mb-2">Nazwa państwa</label>
+          <input type="text" id="countryName" class="form-control w-50 mb-3" [(ngModel)]="countryName"
+            name="countryName" required />
+          <button type="submit" class="btn btn-primary w-50 mb-4">Szukaj</button>
+        </div>
+      </form>
     </div>
-    <button type="submit" class="btn btn-primary">Szukaj</button>
-  </form>
+  </div>
 
-  <div *ngIf="errorMessage" class="alert alert-danger mt-4">
+  <div *ngIf="errorMessage" class="alert alert-danger">
     {{ errorMessage }}
   </div>
 
-  <div class="container" *ngIf="countryDetails">
-    <img class="mb-4" [src]="'https://flagcdn.com/w160/' + countryDetails.iso2.toLowerCase() + '.png'"
-      alt="{{ countryDetails.name }} flag">
+  <div *ngIf="countryDetails" class="country-details">
+    <div class="text-center mb-4">
+      <div class="flag-container">
+        <img [src]="'https://flagcdn.com/w320/' + countryDetails.iso2.toLowerCase() + '.png'"
+          alt="{{ countryDetails.name }} flag" class="img-fluid mb-2">
+      </div>
+      <h2>{{ countryDetails.name }}</h2>
+    </div>
 
-    <p><strong>Nazwa:</strong> {{ countryDetails.name }}</p>
-    <p><strong>Kod ISO:</strong> {{ countryDetails.iso2 }}</p>
-    <p><strong>Populacja:</strong> {{ countryDetails.population + "000" | number }} osób</p>
-    <p><strong>PKB:</strong> {{ countryDetails.gdp | number }} mln USD</p>
-    <p><strong>Stolica:</strong> {{ countryDetails.capital }}</p>
-    <p><strong>Waluta:</strong> {{ countryDetails.currency.name }} ({{ countryDetails.currency.code }})</p>
-    <p><strong>Powierzchnia:</strong> {{ countryDetails.surfaceArea | number }} km²</p>
-    <p><strong>Powierzchnia zalesiona:</strong> {{ countryDetails.forestedArea }} %</p>
-    <p><strong>Bezrobocie:</strong> {{ countryDetails.unemployment | number: '1.1-1' }} %</p>
-    <p><strong>Import:</strong> {{ countryDetails.imports | number }} mln USD</p>
-    <p><strong>Eksport:</strong> {{ countryDetails.exports | number }} mln USD</p>
-    <p><strong>Wskaźnik zabójstw:</strong> {{ countryDetails.homicideRate }} na 100,000 mieszkańców</p>
-    <p><strong>PKB na mieszkańca:</strong> {{ countryDetails.gdpPerCapita | number }} USD</p>
-    <p><strong>Wzrost PKB:</strong> {{ countryDetails.gdpGrowth | number: '1.1-1' }} %</p>
-    <p><strong>Emisja CO2:</strong> {{ countryDetails.co2Emissions | number }} mln ton</p>
-    <p><strong>Oczekiwana długość życia (mężczyźni):</strong> {{ countryDetails.lifeExpectancyMale }} lat</p>
-    <p><strong>Oczekiwana długość życia (kobiety):</strong> {{ countryDetails.lifeExpectancyFemale }} lat</p>
-    <p><strong>Umieralność niemowląt:</strong> {{ countryDetails.infantMortality }} na 1000 urodzeń</p>
-    <p><strong>Zagrożone gatunki:</strong> {{ countryDetails.threatenedSpecies }}</p>
-    <p><strong>Wzrost populacji:</strong> {{ countryDetails.popGrowth }} %</p>
-    <p><strong>Populacja miejska:</strong> {{ countryDetails.urbanPopulation }} %</p>
-    <p><strong>Wzrost populacji miejskiej:</strong> {{ countryDetails.urbanPopulationGrowth }} %</p>
-    <p><strong>Zatrudnienie w przemyśle:</strong> {{ countryDetails.employmentIndustry }} %</p>
-    <p><strong>Zatrudnienie w rolnictwie:</strong> {{ countryDetails.employmentAgriculture }} %</p>
-    <p><strong>Zatrudnienie w usługach:</strong> {{ countryDetails.employmentServices }} %</p>
-    <p><strong>Region:</strong> {{ countryDetails.region }}</p>
-    <p><strong>Gęstość zaludnienia:</strong> {{ countryDetails.popDensity }} osób/km²</p>
-    <p><strong>Użytkownicy internetu:</strong> {{ countryDetails.internetUsers }} %</p>
-    <p><strong>Dzietność:</strong> {{ countryDetails.fertility }} na matkę</p>
+    <button *ngIf="!showSearchForm" class="btn btn-secondary search-button" (click)="toggleSearchForm()">
+      <i class="lni lni-search-alt"></i> Szukaj nowego kraju
+    </button>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <p><strong>Nazwa:</strong> {{ countryDetails.name }}</p>
+            <p><strong>Kod ISO:</strong> {{ countryDetails.iso2 }}</p>
+            <p><strong>Populacja:</strong> {{ countryDetails.population + "000" | number }} osób</p>
+            <p><strong>PKB:</strong> {{ countryDetails.gdp | number }} mln USD</p>
+            <p><strong>Stolica:</strong> {{ countryDetails.capital }}</p>
+            <p><strong>Waluta:</strong> {{ countryDetails.currency.name }} ({{ countryDetails.currency.code }})</p>
+            <p><strong>Powierzchnia:</strong> {{ countryDetails.surfaceArea | number }} km²</p>
+            <p><strong>Powierzchnia zalesiona:</strong> {{ countryDetails.forestedArea }} %</p>
+            <p><strong>Bezrobocie:</strong> {{ countryDetails.unemployment | number: '1.1-1' }} %</p>
+            <p><strong>Import:</strong> {{ countryDetails.imports | number }} mln USD</p>
+            <p><strong>Eksport:</strong> {{ countryDetails.exports | number }} mln USD</p>
+            <p><strong>Wskaźnik zabójstw:</strong> {{ countryDetails.homicideRate }} na 100,000 mieszkańców</p>
+            <p><strong>Region:</strong> {{ countryDetails.region }}</p>
+            <p><strong>Gęstość zaludnienia:</strong> {{ countryDetails.popDensity }} osób/km²</p>
+            <p><strong>Użytkownicy internetu:</strong> {{ countryDetails.internetUsers }} %</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card mb-3">
+          <div class="card-body">
+            <p><strong>PKB na mieszkańca:</strong> {{ countryDetails.gdpPerCapita | number }} USD</p>
+            <p><strong>Wzrost PKB:</strong> {{ countryDetails.gdpGrowth | number: '1.1-1' }} %</p>
+            <p><strong>Emisja CO2:</strong> {{ countryDetails.co2Emissions | number }} mln ton</p>
+            <p><strong>Oczekiwana długość życia (mężczyźni):</strong> {{ countryDetails.lifeExpectancyMale }} lat</p>
+            <p><strong>Oczekiwana długość życia (kobiety):</strong> {{ countryDetails.lifeExpectancyFemale }} lat</p>
+            <p><strong>Umieralność niemowląt:</strong> {{ countryDetails.infantMortality }} na 1000 urodzeń</p>
+            <p><strong>Zagrożone gatunki:</strong> {{ countryDetails.threatenedSpecies }}</p>
+            <p><strong>Wzrost populacji:</strong> {{ countryDetails.popGrowth }} %</p>
+            <p><strong>Populacja miejska:</strong> {{ countryDetails.urbanPopulation }} %</p>
+            <p><strong>Wzrost populacji miejskiej:</strong> {{ countryDetails.urbanPopulationGrowth }} %</p>
+            <p><strong>Zatrudnienie w przemyśle:</strong> {{ countryDetails.employmentIndustry }} %</p>
+            <p><strong>Zatrudnienie w rolnictwie:</strong> {{ countryDetails.employmentAgriculture }} %</p>
+            <p><strong>Zatrudnienie w usługach:</strong> {{ countryDetails.employmentServices }} %</p>
+            <p><strong>Dzietność:</strong> {{ countryDetails.fertility }} na matkę</p>
+            <p><strong>Stosunek płci:</strong> {{ countryDetails.sexRatio }} mężczyzn na 100 kobiet</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

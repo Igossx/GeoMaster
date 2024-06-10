@@ -12,6 +12,7 @@ export class CountryComponent implements OnInit {
   countryName: string = '';
   countryDetails?: CountryDetails;
   errorMessage: string = '';
+  showSearchForm: boolean = true;
 
   constructor(private countryService: CountryService) { }
 
@@ -23,6 +24,7 @@ export class CountryComponent implements OnInit {
         (data: CountryDetails) => {
           this.countryDetails = data;
           this.errorMessage = '';
+          this.showSearchForm = false;
         },
         (error) => {
           this.errorMessage = 'Błąd podczas ładowania danych. Spróbuj ponownie.';
@@ -33,4 +35,9 @@ export class CountryComponent implements OnInit {
       this.errorMessage = 'Nazwa kraju nie może być pusta.';
     }
   }
+
+  toggleSearchForm() {
+    this.showSearchForm = !this.showSearchForm;
+  }
+
 }
