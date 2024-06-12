@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryPopulation } from 'src/app/models/country-population.model';
+import { GameScore } from 'src/app/models/game-score.model';
 import { CountryService } from 'src/app/services/country.service';
 
 @Component({
@@ -22,6 +23,8 @@ export class CountryPopulationGameComponent implements OnInit {
   choiceMade: boolean = false;
   timeElapsed: number = 0;
   timerInterval: any;
+  username: string = '';
+  showSaveResultForm: boolean = false;
 
   constructor(private countryService: CountryService) { }
 
@@ -83,5 +86,33 @@ export class CountryPopulationGameComponent implements OnInit {
         this.gameStarted = false;
       }
     }, 3500);
+  }
+
+  submitScore(): void {
+    if (this.username) {
+      const gameScore: GameScore = {
+        id: '',
+        score: this.score,
+        time: this.timeElapsed,
+        username: this.username,
+        gameType: 'Country-Population'
+      };
+
+      this.countryService.saveGameResult(gameScore).subscribe({
+        next: response => {
+          console.log('Wynik zapisany:', response);
+        },
+        error: err => {
+          this.errorMessage = 'Błąd podczas zapisu danych. Spróbuj ponownie.';
+          console.error(err);
+        }
+      });
+    } else {
+      this.errorMessage = 'Nazwa użytkownika nie może być pusta.';
+    }
+  }
+
+  toggleSaveForm() {
+    this.showSaveResultForm = !this.showSaveResultForm;
   }
 }

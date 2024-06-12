@@ -20,17 +20,17 @@ export class CountryComponent implements OnInit {
 
   onSubmit(): void {
     if (this.countryName) {
-      this.countryService.getCountryDetails(this.countryName).subscribe(
-        (data: CountryDetails) => {
+      this.countryService.getCountryDetails(this.countryName).subscribe({
+        next: data => {
           this.countryDetails = data;
           this.errorMessage = '';
           this.showSearchForm = false;
         },
-        (error) => {
+        error: err => {
           this.errorMessage = 'Błąd podczas ładowania danych. Spróbuj ponownie.';
-          console.error(error);
+          console.error(err);
         }
-      );
+      });
     } else {
       this.errorMessage = 'Nazwa kraju nie może być pusta.';
     }

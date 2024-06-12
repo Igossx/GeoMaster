@@ -58,8 +58,30 @@
 
     <div class="game-over text-center" *ngIf="gameOver">
         <h1 class="mb-4">Koniec gry!</h1>
-        <p class="score-display">Twój wynik: {{ score }}</p>
-        <p class="time-display">z czasem: {{ timeElapsed }} sekund</p>
-        <button class="btn btn-primary btn-lg" (click)="startGame()">Zagraj ponownie</button>
+
+        <div class="result-display mb-4">
+            <p class="score-display">Twój wynik: {{ score }}</p>
+            <p class="time-display">Czas: {{ timeElapsed }} sekund</p>
+        </div>
+
+        <div class="text-center mb-3">
+            <button class="btn btn-primary btn-lg mr-3" (click)="startGame()">Zagraj ponownie</button>
+            <button *ngIf="!showSaveResultForm" class="btn btn-success btn-lg" (click)="toggleSaveForm()">Zapisz wynik</button>
+        </div>
+
+        <div *ngIf="showSaveResultForm" class="text-center">
+            <form (ngSubmit)="submitScore()" class="d-inline-block">
+                <div class="form-group">
+                    <label for="username">Nazwa użytkownika:</label>
+                    <input type="text" id="username" [(ngModel)]="username" name="username"
+                        class="form-control text-center" style="width: 50%;" required>
+                </div>
+                <button type="submit" class="btn btn-success btn-lg mt-3">Zapisz wynik</button>
+            </form>
+
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                {{ errorMessage }}
+            </div>
+        </div>
     </div>
 </div>
