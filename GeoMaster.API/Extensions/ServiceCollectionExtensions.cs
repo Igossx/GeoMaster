@@ -1,4 +1,6 @@
 ﻿using GeoMaster.API.Interfaces;
+using GeoMaster.API.Models.DbSettings;
+using GeoMaster.API.Persistence;
 using GeoMaster.API.Repositories;
 using GeoMaster.API.Services;
 
@@ -18,6 +20,11 @@ namespace GeoMaster.API.Extensions
             services.AddScoped<ICityRepository>(provider =>
             new CityRepository(provider.GetRequiredService<HttpClient>(), apiKey));
 
+            services.Configure<MongoDbSettings>(configuration.GetSection("MongoDB"));
+
+            services.AddSingleton<MongoDbContext>();
+
+            services.AddScoped<IGameScoreRepository, GameScoreRepository>();
         }
     }
 }

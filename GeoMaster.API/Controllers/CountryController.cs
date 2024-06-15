@@ -1,5 +1,7 @@
 ﻿using GeoMaster.API.Interfaces;
 using GeoMaster.API.Models.Country;
+using GeoMaster.API.Models.Scores;
+using GeoMaster.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GeoMaster.API.Controllers
@@ -9,10 +11,12 @@ namespace GeoMaster.API.Controllers
     public class CountryController : Controller
     {
         private readonly ICountryRepository _countryRepository;
+        private readonly IGameScoreRepository _gameScoreRepository;
 
-        public CountryController(ICountryRepository countryRepository)
+        public CountryController(ICountryRepository countryRepository, IGameScoreRepository gameScoreRepository)
         {
             _countryRepository = countryRepository;
+            _gameScoreRepository = gameScoreRepository;
         }
 
         [HttpGet("{countryName}")]
@@ -37,6 +41,14 @@ namespace GeoMaster.API.Controllers
         {
             var (country1, country2) = await _countryRepository.GetTwoDifferentRandomCountriesWithSurfaceAreaAsync();
             return Ok(new TwoCountriesWithSurfaceAreaResult { Country1 = country1, Country2 = country2 });
+        }
+
+        [HttpPost("add-game-score")]
+        [ProducesResponseType(typeof(GameScore), StatusCodes.Status200OK)]
+        public async Task<IActionResult> AddGameScore(GameScore gameScore)
+        {
+            await _gameScoreRepository.SaveGameScoreAsync(gameScore);
+            return Ok();
         }
     }
 }
