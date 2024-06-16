@@ -93,9 +93,10 @@ export class CountryPopulationGameComponent implements OnInit {
       const gameScore: GameScore = {
         id: '',
         score: this.score,
-        time: this.timeElapsed,
+        gameTime: this.timeElapsed,
         username: this.username,
-        gameType: 'Country-Population'
+        gameType: 'Country-Population',
+        date: null
       };
 
       this.countryService.saveGameResult(gameScore).subscribe({

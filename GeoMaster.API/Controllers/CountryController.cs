@@ -1,7 +1,6 @@
 ﻿using GeoMaster.API.Interfaces;
 using GeoMaster.API.Models.Country;
 using GeoMaster.API.Models.Scores;
-using GeoMaster.API.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GeoMaster.API.Controllers
@@ -27,7 +26,7 @@ namespace GeoMaster.API.Controllers
             return Ok(country);
         }
 
-        [HttpGet("twoRandomWithPopulation")]
+        [HttpGet("two-random-population")]
         [ProducesResponseType(typeof(TwoCountriesWithPopulationResult), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetTwoRandomCountriesWithPopulation()
         {
@@ -35,7 +34,7 @@ namespace GeoMaster.API.Controllers
             return Ok(new TwoCountriesWithPopulationResult { Country1 = country1, Country2 = country2 });
         }
 
-        [HttpGet("twoRandomWithSurfaceArea")]
+        [HttpGet("two-random-surface-area")]
         [ProducesResponseType(typeof(TwoCountriesWithSurfaceAreaResult), StatusCodes.Status200OK)]
         public async Task<IActionResult> GetTwoRandomCountriesWithSurfaceArea()
         {
@@ -48,7 +47,7 @@ namespace GeoMaster.API.Controllers
         public async Task<IActionResult> AddGameScore(GameScore gameScore)
         {
             await _gameScoreRepository.SaveGameScoreAsync(gameScore);
-            return Ok();
+            return Ok(gameScore);
         }
     }
 }

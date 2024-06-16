@@ -19,11 +19,11 @@ export class CountryService {
   }
 
   getTwoRandomCountriesWithPopulation(): Observable<{ country1: CountryPopulation, country2: CountryPopulation }> {
-    return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(`${this.apiUrl}/twoRandomWithPopulation`);
+    return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(`${this.apiUrl}/two-random-population`);
   }
 
   saveGameResult(gameScore: GameScore): Observable<GameScore> {
-    return this.http.post<GameScore>(`${this.apiUrl}/save-score`, gameScore);
+    return this.http.post<GameScore>(`${this.apiUrl}/add-game-score`, gameScore);
   }
 
 }

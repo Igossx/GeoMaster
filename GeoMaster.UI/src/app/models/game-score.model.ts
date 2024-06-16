@@ -1,7 +1,8 @@
 export interface GameScore {
-    id: string;
+    id: string | null;
     score: number;
-    time: number;
+    gameTime: number;
     username: string;
     gameType: string;
+    date: string | null;
 }
