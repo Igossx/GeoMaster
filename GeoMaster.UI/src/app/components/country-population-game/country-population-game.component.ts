@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CountryPopulation } from 'src/app/models/country-population.model';
 import { GameScore } from 'src/app/models/game-score.model';
 import { CountryService } from 'src/app/services/country.service';
+import { ScoreService } from 'src/app/services/score.service';
 
 @Component({
   selector: 'app-country-population-game',
@@ -26,7 +27,7 @@ export class CountryPopulationGameComponent implements OnInit {
   username: string = '';
   showSaveResultForm: boolean = false;
 
-  constructor(private countryService: CountryService) { }
+  constructor(private countryService: CountryService, private scoreService: ScoreService) { }
 
   ngOnInit(): void { }
 
@@ -91,7 +92,7 @@ export class CountryPopulationGameComponent implements OnInit {
   submitScore(): void {
     if (this.username) {
       const gameScore: GameScore = {
-        id: '',
+        id: null,
         score: this.score,
         gameTime: this.timeElapsed,
         username: this.username,
@@ -99,7 +100,7 @@ export class CountryPopulationGameComponent implements OnInit {
         date: null
       };
 
-      this.countryService.saveGameResult(gameScore).subscribe({
+      this.scoreService.saveGameResult(gameScore).subscribe({
         next: response => {
           console.log('Wynik zapisany:', response);
         },

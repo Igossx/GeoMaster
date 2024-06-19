@@ -1,6 +1,5 @@
 ﻿using GeoMaster.API.Interfaces;
 using GeoMaster.API.Models.Country;
-using GeoMaster.API.Models.Scores;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GeoMaster.API.Controllers
@@ -10,44 +9,60 @@ namespace GeoMaster.API.Controllers
     public class CountryController : Controller
     {
         private readonly ICountryRepository _countryRepository;
-        private readonly IGameScoreRepository _gameScoreRepository;
 
-        public CountryController(ICountryRepository countryRepository, IGameScoreRepository gameScoreRepository)
+        public CountryController(ICountryRepository countryRepository)
         {
             _countryRepository = countryRepository;
-            _gameScoreRepository = gameScoreRepository;
         }
 
         [HttpGet("{countryName}")]
         [ProducesResponseType(typeof(CountryDetails), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetCountryDetails(string countryName)
         {
+            if (string.IsNullOrWhiteSpace(countryName))
+            {
+                return BadRequest("Nazwa kraju nie może być pusta.");
+            }
+
             var country = await _countryRepository.GetCountryDetailsAsync(countryName);
+
+            if (country is null)
+            {
+                return NotFound("Nie znaleziono szczegółów dotyczących kraju.");
+            }
+
             return Ok(country);
         }
 
         [HttpGet("two-random-population")]
         [ProducesResponseType(typeof(TwoCountriesWithPopulationResult), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetTwoRandomCountriesWithPopulation()
         {
             var (country1, country2) = await _countryRepository.GetTwoDifferentRandomCountriesWithPopulationAsync();
+
+            if (country1 is null || country2 is null)
+            {
+                return NotFound("Nie znaleziono dwóch krajów z populacją.");
+            }
+
             return Ok(new TwoCountriesWithPopulationResult { Country1 = country1, Country2 = country2 });
         }
 
         [HttpGet("two-random-surface-area")]
         [ProducesResponseType(typeof(TwoCountriesWithSurfaceAreaResult), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetTwoRandomCountriesWithSurfaceArea()
         {
             var (country1, country2) = await _countryRepository.GetTwoDifferentRandomCountriesWithSurfaceAreaAsync();
-            return Ok(new TwoCountriesWithSurfaceAreaResult { Country1 = country1, Country2 = country2 });
-        }
 
-        [HttpPost("add-game-score")]
-        [ProducesResponseType(typeof(GameScore), StatusCodes.Status200OK)]
-        public async Task<IActionResult> AddGameScore(GameScore gameScore)
-        {
-            await _gameScoreRepository.SaveGameScoreAsync(gameScore);
-            return Ok(gameScore);
+            if (country1 is null || country2 is null)
+            {
+                return NotFound("Nie znaleziono dwóch krajów z powierzchnią.");
+            }
+
+            return Ok(new TwoCountriesWithSurfaceAreaResult { Country1 = country1, Country2 = country2 });
         }
     }
 }
