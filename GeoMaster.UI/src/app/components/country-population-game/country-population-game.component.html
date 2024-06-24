@@ -66,15 +66,17 @@
 
         <div class="text-center mb-3">
             <button class="btn btn-primary btn-lg mr-3" (click)="startGame()">Zagraj ponownie</button>
-            <button *ngIf="!showSaveResultForm" class="btn btn-success btn-lg" (click)="toggleSaveForm()">Zapisz wynik</button>
+            <button *ngIf="!showSaveResultForm && !successMessage && !scoreSaved" class="btn btn-success btn-lg"
+                (click)="toggleSaveForm()">Zapisz
+                wynik</button>
         </div>
 
-        <div *ngIf="showSaveResultForm" class="text-center">
+        <div *ngIf="showSaveResultForm && !successMessage && !scoreSaved" class="text-center">
             <form (ngSubmit)="submitScore()" class="d-inline-block">
                 <div class="form-group">
                     <label for="username">Nazwa użytkownika:</label>
                     <input type="text" id="username" [(ngModel)]="username" name="username"
-                        class="form-control text-center" style="width: 50%;" required>
+                        class="form-control text-center" required>
                 </div>
                 <button type="submit" class="btn btn-success btn-lg mt-3">Zapisz wynik</button>
             </form>
@@ -82,6 +84,9 @@
             <div *ngIf="errorMessage" class="alert alert-danger mt-3">
                 {{ errorMessage }}
             </div>
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success mt-3">
+            {{ successMessage }}
         </div>
     </div>
 </div>

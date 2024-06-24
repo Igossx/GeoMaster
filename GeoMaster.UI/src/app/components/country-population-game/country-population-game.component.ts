@@ -15,6 +15,7 @@ export class CountryPopulationGameComponent implements OnInit {
   country2!: CountryPopulation;
   score: number = 0;
   errorMessage: string = '';
+  successMessage: string = '';
   gameStarted: boolean = false;
   gameOver: boolean = false;
   showPopulation: boolean = false;
@@ -26,6 +27,7 @@ export class CountryPopulationGameComponent implements OnInit {
   timerInterval: any;
   username: string = '';
   showSaveResultForm: boolean = false;
+  scoreSaved: boolean = false;
 
   constructor(private countryService: CountryService, private scoreService: ScoreService) { }
 
@@ -40,10 +42,20 @@ export class CountryPopulationGameComponent implements OnInit {
     this.gameOver = false;
     this.score = 0;
     this.timeElapsed = 0;
+    this.successMessage = '';
+    this.scoreSaved = false;
+    this.startTimer();
+    this.loadNewCountries();
+  }
+
+  startTimer(): void {
     this.timerInterval = setInterval(() => {
       this.timeElapsed++;
     }, 1000);
-    this.loadNewCountries();
+  }
+
+  stopTimer(): void {
+    clearInterval(this.timerInterval);
   }
 
   loadNewCountries(): void {
@@ -51,18 +63,22 @@ export class CountryPopulationGameComponent implements OnInit {
       next: data => {
         this.country1 = data.country1;
         this.country2 = data.country2;
-        this.errorMessage = '';
-        this.selectedCountry = null;
-        this.correctChoice = null;
-        this.showPopulation = false;
-        this.isBlocked = false;
-        this.choiceMade = false;
+        this.resetSelection();
       },
       error: err => {
         this.errorMessage = 'Błąd podczas ładowania danych. Spróbuj ponownie.';
         console.error(err);
       }
     });
+  }
+
+  resetSelection(): void {
+    this.selectedCountry = null;
+    this.correctChoice = null;
+    this.showPopulation = false;
+    this.isBlocked = false;
+    this.choiceMade = false;
+    this.errorMessage = '';
   }
 
   selectCountry(selectedCountry: CountryPopulation): void {
@@ -78,43 +94,57 @@ export class CountryPopulationGameComponent implements OnInit {
     this.correctChoice = selectedCountry.population >= Math.max(this.country1.population, this.country2.population);
 
     setTimeout(() => {
-      if (this.correctChoice) {
-        this.score++;
-        this.loadNewCountries();
-      } else {
-        clearInterval(this.timerInterval);
-        this.gameOver = true;
-        this.gameStarted = false;
-      }
+      this.handleSelectionResult();
     }, 3500);
   }
 
   submitScore(): void {
-    if (this.username) {
+    if (this.username && !this.scoreSaved) {
+
       const gameScore: GameScore = {
-        id: null,
+        id: '',
         score: this.score,
         gameTime: this.timeElapsed,
         username: this.username,
         gameType: 'Country-Population',
-        date: null
+        date: '2024-06-26'
       };
 
       this.scoreService.saveGameResult(gameScore).subscribe({
         next: response => {
+          this.successMessage = 'Wynik prawidłowo zapisany';
+          this.scoreSaved = true;
           console.log('Wynik zapisany:', response);
         },
         error: err => {
+          console.error('Error:', err);
           this.errorMessage = 'Błąd podczas zapisu danych. Spróbuj ponownie.';
-          console.error(err);
         }
       });
+    } else if (this.scoreSaved) {
+      this.successMessage = 'Wynik już został zapisany';
     } else {
       this.errorMessage = 'Nazwa użytkownika nie może być pusta.';
     }
   }
 
+  handleSelectionResult(): void {
+    if (this.correctChoice) {
+      this.score++;
+      this.loadNewCountries();
+    } else {
+      this.endGame();
+    }
+  }
+
+  endGame(): void {
+    this.stopTimer();
+    this.gameOver = true;
+    this.gameStarted = false;
+  }
+
   toggleSaveForm() {
     this.showSaveResultForm = !this.showSaveResultForm;
+    this.successMessage = '';
   }
 }

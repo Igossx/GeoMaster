@@ -9,6 +9,7 @@ import { CityComponent } from './components/city-details/city-details.component'
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { CountryPopulationGameComponent } from './components/country-population-game/country-population-game.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CountryPopulationGameComponent } from './components/country-population-
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
