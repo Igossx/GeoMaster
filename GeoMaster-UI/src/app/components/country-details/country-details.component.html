@@ -3,10 +3,11 @@
     <div class="card-body">
       <form (ngSubmit)="onSubmit()">
         <h1>Wyszukaj kraj</h1>
-        <div class="form-group d-flex flex-column align-items-center">
-          <label for="countryName" class="mb-2">Nazwa państwa</label>
-          <input type="text" id="countryName" class="form-control w-50 mb-3" [(ngModel)]="countryName"
-            name="countryName" required />
+        <div class="form-group d-flex flex-column align-items-center mt-4">
+          <mat-form-field appearance="fill" class="w-50">
+            <mat-label>Nazwa państwa</mat-label>
+            <input matInput id="countryName" [(ngModel)]="countryName" name="countryName" required />
+          </mat-form-field>
           <button type="submit" class="btn btn-primary w-50 mb-4">Szukaj</button>
         </div>
       </form>

@@ -4,6 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CountryComponent } from './components/country-details/country-details.component';
 import { CityComponent } from './components/city-details/city-details.component';
 import { CountryPopulationGameComponent } from './components/country-population-game/country-population-game.component';
+import { GameScoresComponent } from './components/game-scores/game-scores.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
     path: 'country-population-game',
     component: CountryPopulationGameComponent
   },
+  {
+    path: 'game-scores',
+    component: GameScoresComponent
+  }
 
 ];
 

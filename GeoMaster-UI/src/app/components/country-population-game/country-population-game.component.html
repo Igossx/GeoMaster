@@ -65,22 +65,26 @@
         </div>
 
         <div class="text-center mb-3">
-            <button class="btn btn-primary btn-lg mr-3" (click)="startGame()">Zagraj ponownie</button>
-            <button *ngIf="!showSaveResultForm && !successMessage && !scoreSaved" class="btn btn-success btn-lg"
-                (click)="toggleSaveForm()">Zapisz
-                wynik</button>
+            <div>
+                <button class="btn btn-primary btn-lg" (click)="startGame()">Zagraj ponownie</button>
+            </div>
+            <div>
+                <button *ngIf="!showSaveResultForm && !successMessage && !scoreSaved" class="btn btn-success btn-lg"
+                    (click)="toggleSaveForm()">Zapisz wynik</button>
+            </div>
         </div>
 
         <div *ngIf="showSaveResultForm && !successMessage && !scoreSaved" class="text-center">
             <form (ngSubmit)="submitScore()" class="d-inline-block">
-                <div class="form-group">
-                    <label for="username">Nazwa użytkownika:</label>
-                    <input type="text" id="username" [(ngModel)]="username" name="username"
-                        class="form-control text-center" required>
+                <div class="form-group mt-4">
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nazwa użytkownika</mat-label>
+                        <input matInput id="username" [(ngModel)]="username" name="username" class="text-center"
+                            required />
+                    </mat-form-field>
+                    <button type="submit" class="btn btn-success btn-lg mt-3">Zapisz wynik</button>
                 </div>
-                <button type="submit" class="btn btn-success btn-lg mt-3">Zapisz wynik</button>
             </form>
-
             <div *ngIf="errorMessage" class="alert alert-danger mt-3">
                 {{ errorMessage }}
             </div>
