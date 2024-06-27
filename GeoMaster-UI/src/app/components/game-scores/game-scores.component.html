@@ -1,14 +1,102 @@
 <div class="container">
     <h1 class="mb-4">Tablica wyników</h1>
-    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" (selectedIndexChange)="onTabChange($event)">
         <mat-tab label="Country population">
-            Content 1
+            <ng-template matTabContent>
+                <div class="table-container mb-3">
+                    <div *ngIf="countryPopulationScores.length === 0; else dataAvailable1">
+                        <p>{{ countryPopulationNoDataMessage }}</p>
+                    </div>
+                    <ng-template #dataAvailable1>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Score</th>
+                                    <th scope="col">Game Time</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let score of countryPopulationScores; let i = index">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>{{ score.username }}</td>
+                                    <td>{{ score.score }}</td>
+                                    <td>{{ score.gameTime }}</td>
+                                    <td>{{ score.date | date: 'shortDate' }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ng-template>
+                </div>
+            </ng-template>
         </mat-tab>
         <mat-tab label="Country surface area">
-            Content 2
+            <ng-template matTabContent>
+                <div class="table-container mb-3">
+                    <div *ngIf="countrySurfaceAreaScores.length === 0; else dataAvailable2">
+                        <p>{{ countrySurfaceAreaNoDataMessage }}</p>
+                    </div>
+                    <ng-template #dataAvailable2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Score</th>
+                                    <th scope="col">Game Time</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let score of countrySurfaceAreaScores; let i = index">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>{{ score.username }}</td>
+                                    <td>{{ score.score }}</td>
+                                    <td>{{ score.gameTime }}</td>
+                                    <td>{{ score.date | date: 'shortDate' }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ng-template>
+                </div>
+            </ng-template>
         </mat-tab>
-        <mat-tab label="City population">Content 3
-            Content 3
+        <mat-tab label="City population">
+            <ng-template matTabContent>
+                <div class="table-container mb-3">
+                    <div *ngIf="cityPopulationScores.length === 0; else dataAvailable3">
+                        <p>{{ cityPopulationNoDataMessage }}</p>
+                    </div>
+                    <ng-template #dataAvailable3>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Username</th>
+                                    <th scope="col">Score</th>
+                                    <th scope="col">Game Time</th>
+                                    <th scope="col">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let score of cityPopulationScores; let i = index">
+                                    <th scope="row">{{ i + 1 }}</th>
+                                    <td>{{ score.username }}</td>
+                                    <td>{{ score.score }}</td>
+                                    <td>{{ score.gameTime }}</td>
+                                    <td>{{ score.date | date: 'shortDate' }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ng-template>
+                </div>
+            </ng-template>
         </mat-tab>
     </mat-tab-group>
+
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
 </div>

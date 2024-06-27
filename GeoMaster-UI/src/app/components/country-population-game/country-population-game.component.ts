@@ -60,12 +60,12 @@ export class CountryPopulationGameComponent implements OnInit {
 
   loadNewCountries(): void {
     this.countryService.getTwoRandomCountriesWithPopulation().subscribe({
-      next: data => {
+      next: (data) => {
         this.country1 = data.country1;
         this.country2 = data.country2;
         this.resetSelection();
       },
-      error: err => {
+      error: (err) => {
         this.errorMessage = 'Błąd podczas ładowania danych. Spróbuj ponownie.';
         console.error(err);
       }

@@ -3,22 +3,25 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CountryDetails } from '../models/country-details.model';
 import { CountryPopulation } from '../models/country-population.model';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CountryService {
 
-  private apiUrl = 'https://localhost:7258/api/country';
+  private apiUrl: string = environment.apiBaseUrl + '/country';
 
   constructor(private http: HttpClient) { }
 
   getCountryDetails(countryName: string): Observable<CountryDetails> {
-    return this.http.get<CountryDetails>(`${this.apiUrl}/${countryName}`);
+    const url = `${this.apiUrl}/${countryName}`;
+    return this.http.get<CountryDetails>(url);
   }
 
   getTwoRandomCountriesWithPopulation(): Observable<{ country1: CountryPopulation, country2: CountryPopulation }> {
-    return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(`${this.apiUrl}/two-random-population`);
+    const url = `${this.apiUrl}/two-random-population`;
+    return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(url);
   }
 
 }
