@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { GameScore } from 'src/app/models/game-score.model';
 import { ScoreService } from 'src/app/services/score.service';
 
@@ -9,19 +11,32 @@ import { ScoreService } from 'src/app/services/score.service';
 })
 export class GameScoresComponent {
 
-  countryPopulationScores: GameScore[] = [];
-  countrySurfaceAreaScores: GameScore[] = [];
-  cityPopulationScores: GameScore[] = [];
+  displayedColumns: string[] = ['position', 'username', 'score', 'gameTime', 'date'];
+  countryPopulationDataSource = new MatTableDataSource<GameScore>();
+  countrySurfaceAreaDataSource = new MatTableDataSource<GameScore>();
+  cityPopulationDataSource = new MatTableDataSource<GameScore>();
+
   countryPopulationNoDataMessage: string = '';
   countrySurfaceAreaNoDataMessage: string = '';
   cityPopulationNoDataMessage: string = '';
+
   errorMessage: string = '';
   noDataMessage: string = '';
+
+  @ViewChild('countryPopulationPaginator') countryPopulationPaginator!: MatPaginator;
+  @ViewChild('countrySurfaceAreaPaginator') countrySurfaceAreaPaginator!: MatPaginator;
+  @ViewChild('cityPopulationPaginator') cityPopulationPaginator!: MatPaginator;
 
   constructor(private scoreService: ScoreService) { }
 
   ngOnInit(): void {
     this.loadScores('Country-Population');
+  }
+
+  ngAfterViewInit() {
+    this.countryPopulationDataSource.paginator = this.countryPopulationPaginator;
+    this.countrySurfaceAreaDataSource.paginator = this.countrySurfaceAreaPaginator;
+    this.cityPopulationDataSource.paginator = this.cityPopulationPaginator;
   }
 
   loadScores(gameType: string): void {
@@ -74,13 +89,13 @@ export class GameScoresComponent {
   setScores(gameType: string, scores: GameScore[]): void {
     switch (gameType) {
       case 'Country-Population':
-        this.countryPopulationScores = scores;
+        this.countryPopulationDataSource.data = scores;
         break;
       case 'Country-SurfaceArea':
-        this.countrySurfaceAreaScores = scores;
+        this.countrySurfaceAreaDataSource.data = scores;
         break;
       case 'City-Population':
-        this.cityPopulationScores = scores;
+        this.cityPopulationDataSource.data = scores;
         break;
     }
   }

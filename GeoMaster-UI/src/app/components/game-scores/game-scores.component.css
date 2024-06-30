@@ -1,3 +1,9 @@
-.table-container {
+.tab-content {
+    margin-bottom: 25px;
     margin-top: 25px;
+}
+
+
+.alert {
+    margin-top: 10px;
 }

@@ -1,102 +1,121 @@
 <div class="container">
-    <h1 class="mb-4">Tablica wyników</h1>
-    <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center" (selectedIndexChange)="onTabChange($event)">
-        <mat-tab label="Country population">
-            <ng-template matTabContent>
-                <div class="table-container mb-3">
-                    <div *ngIf="countryPopulationScores.length === 0; else dataAvailable1">
-                        <p>{{ countryPopulationNoDataMessage }}</p>
-                    </div>
-                    <ng-template #dataAvailable1>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Username</th>
-                                    <th scope="col">Score</th>
-                                    <th scope="col">Game Time (sec)</th>
-                                    <th scope="col">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let score of countryPopulationScores; let i = index">
-                                    <th scope="row">{{ i + 1 }}</th>
-                                    <td>{{ score.username }}</td>
-                                    <td>{{ score.score }}</td>
-                                    <td>{{ score.gameTime }}</td>
-                                    <td>{{ score.date | date: 'dd/MM/yyyy' }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </ng-template>
-                </div>
-            </ng-template>
+    <h1>Tablica wyników</h1>
+
+    <mat-tab-group (selectedTabChange)="onTabChange($event)" mat-stretch-tabs="false" mat-align-tabs="center">
+        <mat-tab label="Country Population">
+            <div class="tab-content">
+                <table mat-table [dataSource]="countryPopulationDataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> Miejsce </th>
+                        <td mat-cell *matCellDef="let index = index"> {{ index + 1 }} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef> Nazwa użytkownika </th>
+                        <td mat-cell *matCellDef="let score"> {{score.username}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="score">
+                        <th mat-header-cell *matHeaderCellDef> Wynik </th>
+                        <td mat-cell *matCellDef="let score"> {{score.score}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="gameTime">
+                        <th mat-header-cell *matHeaderCellDef> Czas gry (sec) </th>
+                        <td mat-cell *matCellDef="let score"> {{score.gameTime}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef> Data </th>
+                        <td mat-cell *matCellDef="let score"> {{score.date | date:'dd/MM/yyyy'}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator #countryPopulationPaginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"
+                    aria-label="Paginacja Country Population">
+                </mat-paginator>
+
+                <p *ngIf="countryPopulationNoDataMessage">{{ countryPopulationNoDataMessage }}</p>
+            </div>
         </mat-tab>
-        <mat-tab label="Country surface area">
-            <ng-template matTabContent>
-                <div class="table-container mb-3">
-                    <div *ngIf="countrySurfaceAreaScores.length === 0; else dataAvailable2">
-                        <p>{{ countrySurfaceAreaNoDataMessage }}</p>
-                    </div>
-                    <ng-template #dataAvailable2>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Username</th>
-                                    <th scope="col">Score</th>
-                                    <th scope="col">Game Time</th>
-                                    <th scope="col">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let score of countrySurfaceAreaScores; let i = index">
-                                    <th scope="row">{{ i + 1 }}</th>
-                                    <td>{{ score.username }}</td>
-                                    <td>{{ score.score }}</td>
-                                    <td>{{ score.gameTime }}</td>
-                                    <td>{{ score.date | date: 'dd/MM/yyyy' }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </ng-template>
-                </div>
-            </ng-template>
+
+        <mat-tab label="Country Surface Area">
+            <div class="tab-content">
+                <table mat-table [dataSource]="countrySurfaceAreaDataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> Miejsce </th>
+                        <td mat-cell *matCellDef="let index = index"> {{ index + 1 }} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef> Nazwa użytkownika </th>
+                        <td mat-cell *matCellDef="let score"> {{score.username}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="score">
+                        <th mat-header-cell *matHeaderCellDef> Wynik </th>
+                        <td mat-cell *matCellDef="let score"> {{score.score}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="gameTime">
+                        <th mat-header-cell *matHeaderCellDef> Czas gry </th>
+                        <td mat-cell *matCellDef="let score"> {{score.gameTime}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef> Data </th>
+                        <td mat-cell *matCellDef="let score"> {{score.date | date:'dd/MM/yyyy'}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator #countrySurfaceAreaPaginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"
+                    aria-label="Paginacja Country Surface Area">
+                </mat-paginator>
+
+                <p *ngIf="countrySurfaceAreaNoDataMessage">{{ countrySurfaceAreaNoDataMessage }}</p>
+            </div>
         </mat-tab>
-        <mat-tab label="City population">
-            <ng-template matTabContent>
-                <div class="table-container mb-3">
-                    <div *ngIf="cityPopulationScores.length === 0; else dataAvailable3">
-                        <p>{{ cityPopulationNoDataMessage }}</p>
-                    </div>
-                    <ng-template #dataAvailable3>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Username</th>
-                                    <th scope="col">Score</th>
-                                    <th scope="col">Game Time</th>
-                                    <th scope="col">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr *ngFor="let score of cityPopulationScores; let i = index">
-                                    <th scope="row">{{ i + 1 }}</th>
-                                    <td>{{ score.username }}</td>
-                                    <td>{{ score.score }}</td>
-                                    <td>{{ score.gameTime }}</td>
-                                    <td>{{ score.date | date: 'dd/MM/yyyy' }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </ng-template>
-                </div>
-            </ng-template>
+
+        <mat-tab label="City Population">
+            <div class="tab-content">
+                <table mat-table [dataSource]="cityPopulationDataSource" class="mat-elevation-z8">
+                    <ng-container matColumnDef="position">
+                        <th mat-header-cell *matHeaderCellDef> Miejsce </th>
+                        <td mat-cell *matCellDef="let index = index"> {{ index + 1 }} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef> Nazwa użytkownika </th>
+                        <td mat-cell *matCellDef="let score"> {{score.username}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="score">
+                        <th mat-header-cell *matHeaderCellDef> Wynik </th>
+                        <td mat-cell *matCellDef="let score"> {{score.score}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="gameTime">
+                        <th mat-header-cell *matHeaderCellDef> Czas gry </th>
+                        <td mat-cell *matCellDef="let score"> {{score.gameTime}} </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="date">
+                        <th mat-header-cell *matHeaderCellDef> Data </th>
+                        <td mat-cell *matCellDef="let score"> {{score.date | date:'dd/MM/yyyy'}} </td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <mat-paginator #cityPopulationPaginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]"
+                    aria-label="Paginacja City Population">
+                </mat-paginator>
+
+                <p *ngIf="cityPopulationNoDataMessage">{{ cityPopulationNoDataMessage }}</p>
+            </div>
         </mat-tab>
     </mat-tab-group>
 
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-        {{ errorMessage }}
-    </div>
+    <p *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</p>
 </div>
