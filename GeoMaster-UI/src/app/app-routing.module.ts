@@ -5,6 +5,7 @@ import { CountryComponent } from './components/country-details/country-details.c
 import { CityComponent } from './components/city-details/city-details.component';
 import { CountryPopulationGameComponent } from './components/country-population-game/country-population-game.component';
 import { GameScoresComponent } from './components/game-scores/game-scores.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'game-scores',
     component: GameScoresComponent
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent
   }
 
 ];

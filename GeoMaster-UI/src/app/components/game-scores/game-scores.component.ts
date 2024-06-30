@@ -25,39 +25,16 @@ export class GameScoresComponent {
   }
 
   loadScores(gameType: string): void {
+    this.errorMessage = '';
     this.scoreService.getScoresByGameType(gameType).subscribe({
       next: (data) => {
         if (data.length === 0) {
-          switch (gameType) {
-            case 'Country population':
-              this.countryPopulationNoDataMessage = `Brak wyników dla ${gameType}`;
-              break;
-            case 'Country surface area':
-              this.countrySurfaceAreaNoDataMessage = `Brak wyników dla ${gameType}`;
-              break;
-            case 'City population':
-              this.cityPopulationNoDataMessage = `Brak wyników dla ${gameType}`;
-              break;
-          }
+          this.setNoDataMessage(gameType, `Brak wyników dla ${gameType}`);
         } else {
-          this.countryPopulationNoDataMessage = '';
-          this.countrySurfaceAreaNoDataMessage = '';
-          this.cityPopulationNoDataMessage = '';
+          this.clearNoDataMessage(gameType);
         }
 
-        switch (gameType) {
-          case 'Country-Population':
-            this.countryPopulationScores = data;
-            break;
-          case 'Country-SurfaceArea':
-            this.countrySurfaceAreaScores = data;
-            break;
-          case 'City-Population':
-            this.cityPopulationScores = data;
-            break;
-        }
-
-        this.errorMessage = '';
+        this.setScores(gameType, data);
       },
       error: (err) => {
         this.errorMessage = 'Błąd podczas ładowania wyników. Spróbuj ponownie.';
@@ -66,9 +43,50 @@ export class GameScoresComponent {
     });
   }
 
+  setNoDataMessage(gameType: string, message: string): void {
+    switch (gameType) {
+      case 'Country-Population':
+        this.countryPopulationNoDataMessage = message;
+        break;
+      case 'Country-SurfaceArea':
+        this.countrySurfaceAreaNoDataMessage = message;
+        break;
+      case 'City-Population':
+        this.cityPopulationNoDataMessage = message;
+        break;
+    }
+  }
+
+  clearNoDataMessage(gameType: string): void {
+    switch (gameType) {
+      case 'Country-Population':
+        this.countryPopulationNoDataMessage = '';
+        break;
+      case 'Country-SurfaceArea':
+        this.countrySurfaceAreaNoDataMessage = '';
+        break;
+      case 'City-Population':
+        this.cityPopulationNoDataMessage = '';
+        break;
+    }
+  }
+
+  setScores(gameType: string, scores: GameScore[]): void {
+    switch (gameType) {
+      case 'Country-Population':
+        this.countryPopulationScores = scores;
+        break;
+      case 'Country-SurfaceArea':
+        this.countrySurfaceAreaScores = scores;
+        break;
+      case 'City-Population':
+        this.cityPopulationScores = scores;
+        break;
+    }
+  }
+
   onTabChange(event: any): void {
-    const tabLabels = ['Country-Population', 'Country-SurfaceArea', 'City-Population'];
-    const selectedGameType = tabLabels[event.index];
+    const selectedGameType = event.tab.textLabel;
     this.loadScores(selectedGameType);
   }
 

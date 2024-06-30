@@ -1,0 +1,10 @@
+<div class="container">
+    <h1 class="mb-4">O nas</h1>
+    <button (click)="deleteAllScores()" class="btn btn-danger">Usuń wszystkie wyniki</button>
+    <div *ngIf="successMessage" class="alert alert-success mt-3">
+        {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+        {{ errorMessage }}
+    </div>
+</div>

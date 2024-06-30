@@ -23,4 +23,9 @@ export class ScoreService {
     return this.http.get<GameScore[]>(url);
   }
 
+  deleteAllScores(): Observable<void> {
+    const url = `${this.apiUrl}/delete-all`;
+    return this.http.delete<void>(url);
+  }
+
 }

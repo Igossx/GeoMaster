@@ -12,8 +12,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { GameScoresComponent } from './components/game-scores/game-scores.component';
-import { MatTabsModule } from '@angular/material/tabs';
+import { MatPaginatedTabHeader, MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { MatTableModule } from '@angular/material/table';
     CountryComponent,
     CityComponent,
     CountryPopulationGameComponent,
-    GameScoresComponent
+    GameScoresComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,9 @@ import { MatTableModule } from '@angular/material/table';
     MatFormFieldModule,
     MatInputModule,
     MatTabsModule,
-    MatTableModule
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

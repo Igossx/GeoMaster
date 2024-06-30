@@ -14,7 +14,7 @@
                                     <th scope="col">#</th>
                                     <th scope="col">Username</th>
                                     <th scope="col">Score</th>
-                                    <th scope="col">Game Time</th>
+                                    <th scope="col">Game Time (sec)</th>
                                     <th scope="col">Date</th>
                                 </tr>
                             </thead>
@@ -24,7 +24,7 @@
                                     <td>{{ score.username }}</td>
                                     <td>{{ score.score }}</td>
                                     <td>{{ score.gameTime }}</td>
-                                    <td>{{ score.date | date: 'shortDate' }}</td>
+                                    <td>{{ score.date | date: 'dd/MM/yyyy' }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -55,7 +55,7 @@
                                     <td>{{ score.username }}</td>
                                     <td>{{ score.score }}</td>
                                     <td>{{ score.gameTime }}</td>
-                                    <td>{{ score.date | date: 'shortDate' }}</td>
+                                    <td>{{ score.date | date: 'dd/MM/yyyy' }}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -86,7 +86,7 @@
                                     <td>{{ score.username }}</td>
                                     <td>{{ score.score }}</td>
                                     <td>{{ score.gameTime }}</td>
-                                    <td>{{ score.date | date: 'shortDate' }}</td>
+                                    <td>{{ score.date | date: 'dd/MM/yyyy' }}</td>
                                 </tr>
                             </tbody>
                         </table>
