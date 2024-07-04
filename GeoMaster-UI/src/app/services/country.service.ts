@@ -24,4 +24,9 @@ export class CountryService {
     return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(url);
   }
 
+  getTwoRandomCountriesWithSurfaceArea(): Observable<{ country1: CountryPopulation, country2: CountryPopulation }> {
+    const url = `${this.apiUrl}/two-random-surface-area`;
+    return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(url);
+  }
+
 }
