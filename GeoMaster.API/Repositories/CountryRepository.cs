@@ -64,7 +64,6 @@ namespace GeoMaster.API.Services
             }
 
             var content = await response.Content.ReadAsStringAsync();
-
             var countryData = JArray.Parse(content)[0].ToObject<CountryPopulation>();
 
             return countryData!;

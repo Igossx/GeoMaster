@@ -16,7 +16,7 @@ namespace GeoMaster.API.Repositories
         {
             _httpClient = httpClient;
             _apiKey = apiKey;
-            _cityNames = LoadCityNames().Result;
+            _cityNames = LoadCityNames().GetAwaiter().GetResult();
         }
 
         private static async Task<List<string>> LoadCityNames()
@@ -42,15 +42,14 @@ namespace GeoMaster.API.Repositories
             }
 
             var content = await response.Content.ReadAsStringAsync();
-
             var cityData = JArray.Parse(content)[0].ToObject<CityDetails>();
 
             return cityData!;
         }
 
-        public async Task<CityPopulation> GetRandomCityWithPopulationAsync()
+        public async Task<CityPopulation> GetRandomCityWithPopulationByIndexAsync(int index)
         {
-            var randomCityName = _cityNames[_random.Next(_cityNames.Count)];
+            var randomCityName = _cityNames[index];
             var url = $"https://api.api-ninjas.com/v1/city?name={randomCityName}";
 
             var request = new HttpRequestMessage(HttpMethod.Get, url);
@@ -65,21 +64,24 @@ namespace GeoMaster.API.Repositories
             }
 
             var content = await response.Content.ReadAsStringAsync();
-
-            var countryDataArray = JArray.Parse(content);
-
-            //if (countryDataArray.Count == 0)
-            //{
-            //    return new CityPopulation
-            //    {
-            //        Name = randomCityName,
-            //        Population = "Błąd" // Możesz ustawić dowolną populację lub pozostawić ją pustą
-            //    };
-            //}
-
             var cityData = JArray.Parse(content)[0].ToObject<CityPopulation>();
 
             return cityData!;
+        }
+
+        public async Task<(CityPopulation, CityPopulation)> GetTwoDifferentRandomCitiesWithPopulationAsync()
+        {
+            var index1 = _random.Next(_cityNames.Count);
+            int index2;
+            do
+            {
+                index2 = _random.Next(_cityNames.Count);
+            } while (index1 == index2);
+
+            var city1 = await GetRandomCityWithPopulationByIndexAsync(index1);
+            var city2 = await GetRandomCityWithPopulationByIndexAsync(index2);
+
+            return (city1, city2);
         }
     }
 }

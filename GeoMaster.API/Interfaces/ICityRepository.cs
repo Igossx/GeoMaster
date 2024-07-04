@@ -6,6 +6,8 @@ namespace GeoMaster.API.Interfaces
     {
         Task<CityDetails> GetCityDetailsAsync(string cityName);
 
-        Task<CityPopulation> GetRandomCityWithPopulationAsync();
+        Task<CityPopulation> GetRandomCityWithPopulationByIndexAsync(int index);
+
+        Task<(CityPopulation, CityPopulation)> GetTwoDifferentRandomCitiesWithPopulationAsync();
     }
 }
