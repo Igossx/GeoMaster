@@ -1,4 +1,4 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,14 +7,23 @@ import { AfterViewInit, Component } from '@angular/core';
 })
 export class AppComponent implements AfterViewInit {
   title = 'GeoMaster.UI';
+  isSidebarExpanded = false;
+
+  @ViewChild('sidebar') sidebar!: ElementRef;
+
+  constructor(private renderer: Renderer2) { }
 
   ngAfterViewInit() {
     const hamBurger = document.querySelector(".toggle-btn");
     if (hamBurger) {
       hamBurger.addEventListener("click", () => {
-        const sidebar = document.querySelector("#sidebar");
-        if (sidebar) {
-          sidebar.classList.toggle("expand");
+        if (this.sidebar.nativeElement) {
+          if (this.isSidebarExpanded) {
+            this.renderer.removeClass(this.sidebar.nativeElement, 'expand');
+          } else {
+            this.renderer.addClass(this.sidebar.nativeElement, 'expand');
+          }
+          this.isSidebarExpanded = !this.isSidebarExpanded;
         }
       });
     }

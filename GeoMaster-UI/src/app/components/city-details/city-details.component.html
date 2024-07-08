@@ -1,1 +1,50 @@
-<p>City works!</p>
+<div class="container">
+    <div *ngIf="showSearchForm" class="card mb-4">
+        <div class="card-body">
+            <form (ngSubmit)="onSubmit()">
+                <h1>Wyszukaj miasto</h1>
+                <div class="form-group d-flex flex-column align-items-center mt-4">
+                    <mat-form-field appearance="fill" class="w-50">
+                        <mat-label>Nazwa miasta</mat-label>
+                        <input matInput id="cityName" [(ngModel)]="cityName" name="cityName" required />
+                    </mat-form-field>
+                    <button type="submit" class="btn btn-primary w-50 mb-4">Szukaj</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+
+    <div *ngIf="cityDetails" class="city-details">
+        <div class="text-center mb-4">
+            <div class="flag-container">
+                <img [src]="'https://flagcdn.com/w320/' + cityDetails.country.toLowerCase() + '.png'"
+                    alt="{{ cityDetails.name }} flag" class="img-fluid mb-2">
+            </div>
+            <h2>{{ cityDetails.name }}</h2>
+        </div>
+
+        <button *ngIf="!showSearchForm" class="btn btn-secondary search-button" (click)="toggleSearchForm()">
+            <i class="lni lni-search-alt"></i> Szukaj nowego miasta
+        </button>
+
+        <div class="d-flex justify-content-center">
+            <div class="col-md-6">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <p><strong>Nazwa:</strong> {{ cityDetails.name }}</p>
+                        <p><strong>Kod ISO:</strong> {{ cityDetails.country }}</p>
+                        <p><strong>Populacja:</strong> {{ cityDetails.population | number }} osób</p>
+                        <p><strong>Stolica:</strong>
+                            <span *ngIf="cityDetails.isCapital; else notCapital"> Tak</span>
+                            <ng-template #notCapital> Nie</ng-template>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,10 +1,13 @@
 <div class="container">
-    <h1 class="mb-4">O nas</h1>
-    <button (click)="deleteAllScores()" class="btn btn-danger">Usuń wszystkie wyniki</button>
-    <div *ngIf="successMessage" class="alert alert-success mt-3">
-        {{ successMessage }}
-    </div>
-    <div *ngIf="errorMessage" class="alert alert-danger mt-3">
-        {{ errorMessage }}
+    <h1 class="mb-4">O mnie</h1>
+    <h4>Moje sociale:</h4>
+
+    <div class="d-flex justify-content-center mb-4">
+        <a href="https://www.linkedin.com/in/igor-tarasinski" target="_blank" class="social-icons">
+            <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/igossx" target="_blank" class="social-icons">
+            <i class="fab fa-github"></i>
+        </a>
     </div>
 </div>

@@ -1,1 +1,12 @@
-<p>Home works!!</p>
+<h1 class="mb-4">Welcome to GeoMaster App</h1>
+
+<div class="d-flex justify-content-center mb-4">
+    <button (click)="deleteAllScores()" class="btn btn-danger">Usuń wszystkie wyniki</button>
+</div>
+
+<div *ngIf="successMessage" class="alert-success mt-4">
+    {{ successMessage }}
+</div>
+<div *ngIf="errorMessage" class="alert-danger mt-4">
+    {{ errorMessage }}
+</div>
