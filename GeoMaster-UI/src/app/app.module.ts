@@ -17,6 +17,8 @@ import { MatTableModule } from '@angular/material/table';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { MatSortModule } from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { CountrySurfaceGameComponent } from './components/country-surface-game/country-surface-game.component';
+import { CityPopulationGameComponent } from './components/city-population-game/city-population-game.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CityComponent,
     CountryPopulationGameComponent,
     GameScoresComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    CountrySurfaceGameComponent,
+    CityPopulationGameComponent
   ],
   imports: [
     BrowserModule,

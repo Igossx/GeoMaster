@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { CountryDetails } from '../models/country-details.model';
 import { CountryPopulation } from '../models/country-population.model';
 import { environment } from 'src/environments/environment';
+import { CountrySurfaceArea } from '../models/country-surface-area.model';
 
 @Injectable({
   providedIn: 'root'
@@ -24,9 +25,9 @@ export class CountryService {
     return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(url);
   }
 
-  getTwoRandomCountriesWithSurfaceArea(): Observable<{ country1: CountryPopulation, country2: CountryPopulation }> {
+  getTwoRandomCountriesWithSurfaceArea(): Observable<{ country1: CountrySurfaceArea, country2: CountrySurfaceArea }> {
     const url = `${this.apiUrl}/two-random-surface-area`;
-    return this.http.get<{ country1: CountryPopulation, country2: CountryPopulation }>(url);
+    return this.http.get<{ country1: CountrySurfaceArea, country2: CountrySurfaceArea }>(url);
   }
 
 }

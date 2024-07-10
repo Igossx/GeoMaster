@@ -1,0 +1,96 @@
+<div class="container">
+    <div class="game-container text-center" *ngIf="!gameStarted && !gameOver">
+        <h1 class="mb-4">Wybierz kraj z większą powierzchnią</h1>
+        <button class="btn btn-primary btn-lg" (click)="startGame()">Start</button>
+    </div>
+
+    <div class="game-container" *ngIf="gameStarted && !gameOver">
+        <h1 class="mb-4">Wybierz kraj z większą powierzchnią</h1>
+        <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+        <div class="row justify-content-center" *ngIf="country1 && country2">
+            <div class="col-md-5">
+                <div class="card mb-4 text-center" (click)="selectCountry(country1)" [class.selected]="isBlocked"
+                    [ngClass]="{
+                        'bg-success': choiceMade && selectedCountry === country1 && correctChoice,
+                        'bg-danger': choiceMade && selectedCountry === country1 && !correctChoice,
+                        'selected-card': selectedCountry === country1
+                    }">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <img class="mb-4" [src]="'https://flagcdn.com/w160/' + country1.iso2.toLowerCase() + '.png'"
+                            alt="{{ country1.name }} flag">
+                        <h5 class="card-title">{{ country1.name }}</h5>
+                        <p *ngIf="showSurfaceArea" class="card-text">{{ country1.surfaceArea | number }} km²</p>
+                        <p *ngIf="!showSurfaceArea" class="card-text">Kliknij, aby wybrać</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2 d-flex align-items-center justify-content-center">
+                <h2 class="vs">VS</h2>
+            </div>
+            <div class="col-md-5">
+                <div class="card mb-4 text-center" (click)="selectCountry(country2)" [class.selected]="isBlocked"
+                    [ngClass]="{
+                        'bg-success': choiceMade && selectedCountry === country2 && correctChoice,
+                        'bg-danger': choiceMade && selectedCountry === country2 && !correctChoice,
+                        'selected-card': selectedCountry === country2
+                    }">
+                    <div class="card-body d-flex flex-column justify-content-center align-items-center">
+                        <img class="mb-4" [src]="'https://flagcdn.com/w160/' + country2.iso2.toLowerCase() + '.png'"
+                            alt="{{ country2.name }} flag">
+                        <h5 class="card-title">{{ country2.name }}</h5>
+                        <p *ngIf="showSurfaceArea" class="card-text">{{ country2.surfaceArea | number }} km²</p>
+                        <p *ngIf="!showSurfaceArea" class="card-text">Kliknij, aby wybrać</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 row justify-content-center">
+            <div class="col-md-4 text-center">
+                <h4 class="game-info">Wynik: {{ score }}</h4>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4 text-center">
+                <h4 class="game-info">Czas gry: {{ timeElapsed }} sekund</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-over text-center" *ngIf="gameOver">
+        <h1 class="mb-4">Koniec gry!</h1>
+
+        <div class="result-display mb-4">
+            <p class="score-display">Twój wynik: {{ score }}</p>
+            <p class="time-display">Czas: {{ timeElapsed }} sekund</p>
+        </div>
+
+        <div class="text-center mb-3">
+            <div>
+                <button class="btn btn-primary btn-lg" (click)="startGame()">Zagraj ponownie</button>
+            </div>
+            <div>
+                <button *ngIf="!showSaveResultForm && !successMessage && !scoreSaved" class="btn btn-success btn-lg"
+                    (click)="toggleSaveForm()">Zapisz wynik</button>
+            </div>
+        </div>
+
+        <div *ngIf="showSaveResultForm && !successMessage && !scoreSaved" class="text-center">
+            <form (ngSubmit)="submitScore()" class="d-inline-block">
+                <div class="form-group mt-4">
+                    <mat-form-field appearance="fill" class="w-100">
+                        <mat-label>Nazwa użytkownika</mat-label>
+                        <input matInput id="username" [(ngModel)]="username" name="username" class="text-center"
+                            required />
+                    </mat-form-field>
+                    <button type="submit" class="btn btn-success btn-lg mt-3">Zapisz wynik</button>
+                </div>
+            </form>
+            <div *ngIf="errorMessage" class="alert alert-danger mt-3">
+                {{ errorMessage }}
+            </div>
+        </div>
+        <div *ngIf="successMessage" class="alert alert-success mt-3">
+            {{ successMessage }}
+        </div>
+    </div>
+</div>

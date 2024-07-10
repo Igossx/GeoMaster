@@ -63,7 +63,7 @@ export class GameScoresComponent {
       case 'Country-Population':
         this.countryPopulationNoDataMessage = message;
         break;
-      case 'Country-SurfaceArea':
+      case 'Country-Surface-Area':
         this.countrySurfaceAreaNoDataMessage = message;
         break;
       case 'City-Population':
@@ -77,7 +77,7 @@ export class GameScoresComponent {
       case 'Country-Population':
         this.countryPopulationNoDataMessage = '';
         break;
-      case 'Country-SurfaceArea':
+      case 'Country-Surface-Area':
         this.countrySurfaceAreaNoDataMessage = '';
         break;
       case 'City-Population':
@@ -91,7 +91,7 @@ export class GameScoresComponent {
       case 'Country-Population':
         this.countryPopulationDataSource.data = scores;
         break;
-      case 'Country-SurfaceArea':
+      case 'Country-Surface-Area':
         this.countrySurfaceAreaDataSource.data = scores;
         break;
       case 'City-Population':
