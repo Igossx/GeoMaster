@@ -101,7 +101,20 @@ export class GameScoresComponent {
   }
 
   onTabChange(event: any): void {
-    const selectedGameType = event.tab.textLabel;
+    let selectedGameType = '';
+    switch (event.tab.textLabel) {
+      case 'Country Population':
+        selectedGameType = 'Country-Population';
+        break;
+      case 'Country Surface Area':
+        selectedGameType = 'Country-Surface-Area';
+        break;
+      case 'City Population':
+        selectedGameType = 'City-Population';
+        break;
+      default:
+        selectedGameType = 'Country-Population';
+    }
     this.loadScores(selectedGameType);
   }
 
