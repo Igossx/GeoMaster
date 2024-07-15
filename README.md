@@ -9,18 +9,18 @@ GeoMaster App is a web application built using .NET for the backend and Angular 
 * [Contact](#contact)
 
 ## Technologies Used
-# Backend
+### Backend
 - .Net - version 8.0
 - ASP.NET Web API
-- MongoDB - version 2.26.0
+- MongoDB
 
-# Frontend
+### Frontend
 - Angular 16 + Angular Material
 - HTML5 and CSS3
 - Java Script - ES12
 - Bootstrap 5
 
-# APIs
+### APIs
 - [API Ninjas](https://api-ninjas.com/)
 - [Flagpedia.net](https://flagpedia.net/download/api)
 
@@ -32,27 +32,33 @@ GeoMaster App is a web application built using .NET for the backend and Angular 
 
 ## Features
 
-### User funcionalities
-- viewing of films
-- viewing of screenings
-- filtering movies and screenings
-- view own bookings
-- possibility of seat reservation
-- pay for bookings
-- print tickets
-- log-in and registration
+### Country and City Information:
 
-### Admin funcionalities
-- adding, deleting and editing movies
-- adding, deleting and editing screenings
-- adding, deleting and editing cinemas
-- adding, deleting and editing bookings
-- changing user roles
-- log-in and registration
+- Detailed information about countries and cities.
+- Data fetched from API Ninjas.
+  
+**Interactive Games**:
+
+- Games that challenge your knowledge about countries and cities.
+- Current games include:
+    - Country Population Comparison
+    - Country Surface Area Comparison
+    - City Population Comparison
+
+### Flag Display:
+
+- Utilizes Flagpedia API to display country flags.
+  
+### Scores and Leaderboards:
+
+- Tracks and displays high scores for each game.
+- Stores scores in MongoDB for persistence.
 
 ## Project presentation
 
-### [ASP NET CORE MVC, Cinema Ticket Booking App with CQRS and MediatR](https://www.youtube.com/watch?v=JWXmKoB8IEk)
+### Pictures
+
+### [GeoMaster App with .NET API and Angular 16](https://www.youtube.com/watch?v=JWXmKoB8IEk)
 
 
 
