@@ -9,18 +9,18 @@ GeoMaster App is a web application built using .NET for the backend and Angular 
 * [Contact](#contact)
 
 ## Technologies Used
-### Backend
+**Backend**
 - .Net - version 8.0
 - ASP.NET Web API
 - MongoDB
 
-### Frontend
+**Frontend**
 - Angular 16 + Angular Material
 - HTML5 and CSS3
 - Java Script - ES12
 - Bootstrap 5
 
-### APIs
+**APIs**
 - [API Ninjas](https://api-ninjas.com/)
 - [Flagpedia.net](https://flagpedia.net/download/api)
 
@@ -32,12 +32,12 @@ GeoMaster App is a web application built using .NET for the backend and Angular 
 
 ## Features
 
-### Country and City Information:
+**Country and City Information**
 
 - Detailed information about countries and cities.
 - Data fetched from API Ninjas.
   
-**Interactive Games**:
+**Interactive Games**
 
 - Games that challenge your knowledge about countries and cities.
 - Current games include:
@@ -45,22 +45,22 @@ GeoMaster App is a web application built using .NET for the backend and Angular 
     - Country Surface Area Comparison
     - City Population Comparison
 
-### Flag Display:
+**Flag Display**
 
 - Utilizes Flagpedia API to display country flags.
   
-### Scores and Leaderboards:
+**Scores and Leaderboards**
 
 - Tracks and displays high scores for each game.
 - Stores scores in MongoDB for persistence.
 
 ## Project presentation
 
-### Pictures
+**Pictures**
+
+**YouTube video**
 
 ### [GeoMaster App with .NET API and Angular 16](https://www.youtube.com/watch?v=JWXmKoB8IEk)
-
-
 
 ## Project Status
 Project is: **Finished**.
