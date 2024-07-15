@@ -72,7 +72,7 @@ GeoMaster App is a web application built using .NET for the backend and Angular 
 
 ### YouTube video
 
-### [GeoMaster App with .NET API and Angular 16](https://www.youtube.com/watch?v=JWXmKoB8IEk)
+### [GeoMaster App with .NET API and Angular 16](https://www.youtube.com/watch?v=k4hB0FTOdRw)
 
 ## Project Status
 Project is: **Finished**.
