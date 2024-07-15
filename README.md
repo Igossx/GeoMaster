@@ -57,6 +57,17 @@ GeoMaster App is a web application built using .NET for the backend and Angular 
 ## Project presentation
 
 **Pictures**
+![.NET API](images/API.png)
+
+![Country details window](images/country-details.png)
+
+![Menu](images/menu.png)
+
+![Win game](images/przegrana.png)
+
+![Lose game](images/wygrana.png)
+
+![Scoreboard](images/tablica wyników.png)
 
 **YouTube video**
 
